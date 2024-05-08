@@ -67,6 +67,7 @@ public class UserServiceImpl implements UserService {
         LoginOutDTO loginOutDTO = LoginOutDTO.builder()
                 .email(employee.getEmail())
                 .role(getHighestWeightRole(employee.getUserWorkDetail().getRoles()))
+                .employeeId(employee.getUserId())
                 .build();
 
         return loginOutDTO;
@@ -84,10 +85,11 @@ public class UserServiceImpl implements UserService {
         String highestWeightRole = null;
 
         Map<String, Integer> roleWeights = new HashMap<>();
-        roleWeights.put("Super_Admin", 4);
-        roleWeights.put("ADMIN", 3);
-        roleWeights.put("MANAGER", 2);
-        roleWeights.put("EMPLOYEE", 1);
+        roleWeights.put("CLIENT_MANAGER", 5);
+		roleWeights.put("RECRUITER_MANAGER", 4);
+		roleWeights.put("RECRUITER", 3);
+		roleWeights.put("MANAGER", 2);
+		roleWeights.put("EMPLOYEE", 1);
 
         int maxWeight = Integer.MIN_VALUE;
 

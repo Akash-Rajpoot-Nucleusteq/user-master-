@@ -30,7 +30,7 @@ public class DatabaseConfig {
         dataSource.setDriverClassName("org.postgresql.Driver");
         dataSource.setUrl("jdbc:postgresql://localhost:5432/plasma");
         dataSource.setUsername("postgres");
-        dataSource.setPassword("Compiler");
+        dataSource.setPassword("password");
         return dataSource;
     }
     /**

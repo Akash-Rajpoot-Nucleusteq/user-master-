@@ -22,4 +22,8 @@ public class LoginOutDTO {
 	 * The role of the user.
 	 */
 	private String role;
+	/**
+	 * The employee id of the user.
+	 */
+	private String employeeId;
 }

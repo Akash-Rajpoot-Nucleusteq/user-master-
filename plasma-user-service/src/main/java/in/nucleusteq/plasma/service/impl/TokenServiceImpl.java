@@ -54,7 +54,7 @@ public class TokenServiceImpl implements TokenService {
     @Override
     public TokenResponce getGenerateCustomToken(String email)
             throws UnauthorizedAccessException, IOException, TokenServiceException {
-        HttpClientResponse tokenResponse = tokenClientService.getToken(new TokenRequest(email));
+        Response tokenResponse = tokenClientService.getToken(new TokenRequest(email));
         if (tokenResponse.status() == HttpStatus.UNAUTHORIZED.value()) {
             LOGGER.error("Email id {} does not have a valid status {}. Please contact Plasma team"
                     + " support for more information.", email, tokenResponse.status());
